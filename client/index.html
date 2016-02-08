@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app='coffeetime'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>coffee +ime</title>
+    <link rel= "icon" type="image/png" href="coffeebean.png">
+    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class='jumbotron'>
+    <h1>coffee +ime</h1>
+    <h4>for the perfect brew<h4>
+    </div>
+
+    <div class="fb-stuff"><div class="fb-share-button" data-href="https://coffeeplusime.herokuapp.com/" data-layout="button_count"></div>
+    <div class="fb-send" data-href="https://coffeeplusime.herokuapp.com/"></div></div>
+
+    <div ui-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="lib/bundle.js"></script>   
+    <script src="app/app.js"></script>
+    <script src="app/entry/entry.js"></script>
+    <script src="app/services/services.js"></script>
+  </body>
+
+  <style type="text/css">
+    footer {
+        position:absolute;
+        bottom:20px;
+        height:40px;
+        margin-top:40px;
+    }
+    .fb-stuff{
+        position:absolute;
+        right:50px;
+    }
+    </style>
+
+  <footer>
+    <div class="col-md-20">
+    <p>Need a little help getting started? Here's a great link to get started <a href="https://www.stumptowncoffee.com/brew-guides/" target="_blank"><img src="coffeeArrow.jpg" style="width:75px;height:50px;"></a></p>
+    <p>smellichi</p>
+    </div>
+  </footer>
+
+
+</html>

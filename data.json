@@ -1,0 +1,5 @@
+[{"brewMethod" : "chemex", "beanRatio" : "14", "caffeinePerCup" : "145", "instructions" : "https://www.stumptowncoffee.com/brew-guides/chemex"},
+{"brewMethod" : "filtron(cold brew)", "beanRatio" : "33", "caffeinePerCup" : "212.6", "instructions" : "https://www.stumptowncoffee.com/brew-guides/filtron" },
+{"brewMethod" : "french press", "beanRatio" : "7", "caffeinePerCup" : "108", "instructions" : "https://www.stumptowncoffee.com/brew-guides/french-press"},
+{"brewMethod" : "aero press", "beanRatio" : "18.3", "caffeinePerCup": "151.4", "instructions" : "https://www.stumptowncoffee.com/brew-guides/aeropress"},
+{"brewMethod" : "hario v60", "beanRatio": "16.8", "caffeinePerCup": "145", "instructions" : "https://www.stumptowncoffee.com/brew-guides/v60"}]

@@ -1,0 +1,29 @@
+<div id='container' ng-controller='EntryController'>
+
+  <form name="coffeeForm" class='input-group' ng-submit='sendFilterParams()'>
+    <!-- <input name='brewMethod' class='form-control' type='text' ng-model='coffee.brewMethod' placeholder="Enter a brew method!" required> -->
+    <div class='dropdown' ng-init='getAllData()'>
+      <select ng-model='coffee.brewMethod' class="btn btn-info btn-lg dropdown-toggle">
+      <option value="" disabled>Select a brew method!</option>
+        <option ng-repeat="type in coffee.methodKeys">{{type}}</option>
+      </select>
+    </div>
+    <input name='amount' type='text' class='form-control' ng-model='coffee.amount' placeholder='Enter number of cups!' ng-pattern="onlyNumbers" ng-class='{error: coffeeForm.$invalid && coffeeForm.$dirty}' required>
+    <button class='btn btn-default' ng-click='sendFilterParams()' ng-disabled='coffeeForm.$invalid'>VOODOO</button>
+  </form>
+  <br>
+
+  <div class="instructions" ng-show='coffee.brewMethod'>
+    <a href= "{{coffee.allBrewMethods[coffee.brewMethod]}}" class="text-capitalize lead" target="_blank">{{coffee.brewMethod}} Instructions!</a>
+  </div>
+
+  <div class="result" ng-show='coffee.filteredData'>
+    <ul class="list-group">
+      <li class="list-group-item" ng-value='coffee.filteredData' ng-show='coffee.amount'>
+        <div class="beans">You will need {{(coffee.filteredData.beanRatio * coffee.amount)}}g of coffee beans!</div>
+        <div class="caffeine">and you will be consuming {{(coffee.filteredData.caffeinePerCup * coffee.amount)}}mg of caffeine!</div>
+      </li>
+    </ul>
+  </div>
+
+</div>

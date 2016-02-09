@@ -3,6 +3,9 @@ var morgan = require('morgan');
 var fs = require('fs');
 var Promise = require('bluebird');
 var bodyParser = require('body-parser');
+var path = require('path');
+var db = require('./db').db;
+var Coffee = require('./db').Coffee;
 var app = express();
 
 var PORT = process.env.PORT || 3000;
@@ -12,7 +15,7 @@ app.set('port', PORT);
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/', express.static(__dirname +'/client'));
+app.use('/', express.static(path.join(__dirname, '../client')));
 
 // app.get('/api/coffee', function(req, res){
 
@@ -20,21 +23,24 @@ app.use('/', express.static(__dirname +'/client'));
 app.use(bodyParser.json());
 
 app.post('/api/coffee', function(req, res){
-  var readFile = Promise.promisify(fs.readFile);
-  readFile('data.json')
-    .then(function(contents){
-      if(contents){
-        res.send(contents);
-      }
-    });
+  // var readFile = Promise.promisify(fs.readFile);
+  // readFile('data.json')
+  //   .then(function(contents){
+  //     if(contents){
+  //       res.send(contents);
+  //     }
+  //   });
+  Coffee.find({}, function(err, allData) {
+    if (allData) {
+      res.send(allData);
+    }
+  });
 });
 
 app.get('/api/coffee', function(req, res){
-  var readFile = Promise.promisify(fs.readFile);
-  readFile('data.json')
-    .then(function(allData){
-      res.send(allData);
-    });
+  Coffee.find({}, function(err, allData) {
+    res.send(allData);
+  })
 });
 
 app.use(function(error, req, res, next){

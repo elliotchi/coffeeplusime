@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var db = require('./db').db;
 var Coffee = require('./db').Coffee;
+var cors = require('cors');
 var app = express();
 
 var PORT = process.env.PORT || 3000;
@@ -14,6 +15,8 @@ app.set('port', PORT);
   
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(cors());
 
 app.use('/', express.static(path.join(__dirname, '../dist')));
 

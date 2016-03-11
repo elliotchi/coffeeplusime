@@ -15,7 +15,7 @@ app.set('port', PORT);
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/', express.static(path.join(__dirname, '../client')));
+app.use('/', express.static(path.join(__dirname, '../dist')));
 
 // app.get('/api/coffee', function(req, res){
 

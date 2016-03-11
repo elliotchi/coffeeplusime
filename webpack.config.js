@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
   entry: {
@@ -14,7 +14,7 @@ module.exports = {
   },
   
   plugins: [
-    new webpack.optimize.CommonChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new HtmlWebpackPlugin({
       inject: false,
       template: './client/index.html'

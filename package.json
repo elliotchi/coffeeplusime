@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src",
     "build": "webpack",
-    "postinstall": "typings install && webpack"
+    "postinstall": "typings install && webpack",
+    "start:server": "nodemon server/server"
   },
   "engines": {
     "node": "5.6.0"

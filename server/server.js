@@ -25,7 +25,7 @@ app.use('/', express.static(path.join(__dirname, '../dist')));
 // })
 app.use(bodyParser.json());
 
-app.post('/api/coffee', function(req, res){
+app.get('/api/coffee/:method', function(req, res){
   // var readFile = Promise.promisify(fs.readFile);
   // readFile('data.json')
   //   .then(function(contents){
@@ -33,17 +33,31 @@ app.post('/api/coffee', function(req, res){
   //       res.send(contents);
   //     }
   //   });
-  Coffee.find({}, function(err, allData) {
-    if (allData) {
-      res.send(allData);
-    }
-  });
+  Coffee.find({brewMethod: req.params.method})
+    .then(function(data) {
+      res.send(data);
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+  // , function(err, allData) {
+  //   if (allData) {
+  //     res.send(allData);
+  //   }
+  // });
 });
 
 app.get('/api/coffee', function(req, res){
-  Coffee.find({}, function(err, allData) {
-    res.send(allData);
-  })
+  Coffee.find({})
+    .then(function(allData) {
+      res.send(allData);
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+   // , function(err, allData) {
+  //   res.send(allData);
+  // })
 });
 
 app.use(function(error, req, res, next){

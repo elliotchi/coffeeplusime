@@ -2,7 +2,7 @@ import { Http, Response } from 'angular2/http';
 import { Injectable } from 'angular2/core';
 import { Observable } from 'rxjs/Rx';
 // only need for webpack dev server
-import { originUrl } from '../../config/config';
+import { originUrl } from '../../../config/config';
 
 @Injectable()
 

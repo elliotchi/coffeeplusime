@@ -14,7 +14,7 @@ export class Coffee {
   public coffee;
   public coffee_error;
   
-  constructor(private coffeeService: CoffeeService) { }
+  constructor(private coffeeService: CoffeeService) {}
   
   getCoffeeData() {
     this.coffeeService.getCoffeeData()
@@ -29,5 +29,3 @@ export class Coffee {
     this.getCoffeeData();
   }
 }
-
-export const poop = function(){}

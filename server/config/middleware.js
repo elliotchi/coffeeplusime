@@ -21,4 +21,6 @@ module.exports = function (app) {
   
   app.use(express.static(path.join(__dirname, '../../dist')));
   
+  app.use('/styles', express.static(path.join(__dirname, '../../node_modules/bootstrap/dist')));
+  
 }

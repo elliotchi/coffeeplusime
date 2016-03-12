@@ -7,9 +7,14 @@ import { originUrl } from '../../config/config';
 @Injectable()
 
 export class CoffeeService {
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
+  
   getCoffeeData() {
     // will take for final
-    return this.http.get(`${originUrl}/api/coffee`).map((res:Response) => res.json());
+    return this.http.get(`${originUrl}/api/coffee`).map((res: Response) => res.json());
+  }
+  
+  selectBrewMethod(brewMethod) {
+    return this.http.get(`${originUrl}/api/coffee/${brewMethod}`).map((res: Response) => res.json());
   }
 }

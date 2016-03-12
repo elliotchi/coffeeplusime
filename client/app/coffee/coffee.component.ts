@@ -29,3 +29,5 @@ export class Coffee {
     this.getCoffeeData();
   }
 }
+
+export const poop = function(){}

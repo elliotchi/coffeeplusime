@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { CoffeeService } from './coffee.service';
+import { CoffeeService } from '../services/coffee.service';
 
 @Component({
   selector: 'coffee',
@@ -9,6 +9,7 @@ import { CoffeeService } from './coffee.service';
     </ul>
   `
 })
+
 export class Coffee {
   
   public coffee;

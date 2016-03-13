@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from 'angular2/core';
-import { CoffeeService } from './coffee.service';
+import { CoffeeService } from '../services/coffee.service';
 
 @Component({
   selector: 'coffee-dropdown',

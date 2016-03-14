@@ -1,11 +1,13 @@
 import { Component } from 'angular2/core';
 import { CoffeeService } from '../services/coffee.service';
+import { CoffeePipe } from '../pipes/coffee.pipe';
 
 @Component({
   selector: 'coffee',
+  pipes: [CoffeePipe],
   template: `
     <ul>
-      <li *ngFor="#coffee of coffee">{{coffee.brewMethod}}</li>
+      <li *ngFor="#coffee of coffee">{{coffee | json}}</li>
     </ul>
   `
 })
@@ -20,7 +22,7 @@ export class Coffee {
   getCoffeeData() {
     this.coffeeService.getCoffeeData()
       .subscribe(
-        data => { this.coffee = data; },
+        data => { this.coffee = data; console.log(this.coffee)},
         err => { this.coffee_error = true; }
         
       );

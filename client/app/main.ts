@@ -5,7 +5,7 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import { Coffee } from './coffee/components/coffee.component';
 import { CoffeeJumbo } from './jumbotron/jumbotron.component';
 import { CoffeeDropdown } from './coffee/components/dropdown.component';
-import { CupInput } from './coffee/components/cupInput.component'
+import { CupInput } from './coffee/components/cupInput.component';
 import 'rxjs/add/operator/map';
 
 @Component({

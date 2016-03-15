@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-require('dotenv').config()
+require('dotenv').config();
 
 var db = mongoose.connect(process.env.PROD_MONGODB);
 var coffeeSchema = new mongoose.Schema({

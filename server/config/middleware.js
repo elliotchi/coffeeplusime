@@ -3,10 +3,12 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var path = require('path');
 var db = require('../db').db;
+var compression = require('compression');
 // cors for webpack-dev-server
 var cors = require('cors');
 
 module.exports = function (app) {
+  app.use(compression());
   var router = express.Router();
   
   app.use(morgan('dev'));

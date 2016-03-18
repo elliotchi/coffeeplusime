@@ -18,7 +18,7 @@ module.exports = {
         res.send(data);
       })
       .catch(function(err) {
-        console.errror(err);
+        console.error(err);
       });
   }
   

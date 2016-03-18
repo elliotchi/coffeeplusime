@@ -5,17 +5,21 @@ import { CoffeeService } from '../services/coffee.service';
   selector: 'coffee-dropdown',
   template: `
   <div>
-    <select #sel (change)="select.emit(sel.value)">
-      <option *ngFor="#brewMethod of coffeeDropdown">
+    <select [(ngModel)]="selectedBrewType" (change)="selectBrewMethod()">
+      <option *ngFor="#brewMethod of coffeeDropdown" [value]="brewMethod.brewMethod">
       {{brewMethod.brewMethod}}
       </option>
     </select>
+  </div>
+  
+  <div *ngIf="!!coffeeInformation">
+    {{coffeeInformation | json }}
   </div>
   `
 })
 
 export class CoffeeDropdown {
-  @Output() select = new EventEmitter();
+  // @Output() select = new EventEmitter();
 
   public coffeeDropdown;
   public selectedBrewType;
@@ -37,6 +41,8 @@ export class CoffeeDropdown {
         data => { this.coffeeInformation = data; },
         err => { console.error(err); }
       );
+      
+      console.log(this.coffeeInformation[0]["beanRatio"]);
   }
   
   ngOnInit() {

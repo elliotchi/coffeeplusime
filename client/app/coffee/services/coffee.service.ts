@@ -10,10 +10,10 @@ export class CoffeeService {
   
   getCoffeeData() {
     // will take for final
-    return this.http.get(`/api/coffee`).map((res: Response) => res.json());
+    return this.http.get(`http://localhost:3000/api/coffee`).map((res: Response) => res.json());
   }
   
   selectBrewMethod(brewMethod) {
-    return this.http.get(`/api/coffee/${brewMethod}`).map((res: Response) => res.json());
+    return this.http.get(`http://localhost:3000/api/coffee/${brewMethod}`).map((res: Response) => res.json());
   }
 }
